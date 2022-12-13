@@ -9,5 +9,7 @@ router.get('/products', productsController.getAllProducts);
 router.get('/products/:id', productsController.getProductById);
 router.post('/products', middlewares.validateName, productsController.createNewProduct);
 router.get('/sales', salesController.getAllSales);
+router.get('/sales/:id', salesController.getSaleById);
+router.put('/products/:id', middlewares.validateName, productsController.updateProduct);
 
 module.exports = router;
