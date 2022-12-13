@@ -26,7 +26,23 @@ FROM StoreManager.sales AS venda
   );
   return sale;
 };
+
+const deleteSale = async (id) => {
+  await conn.execute(
+    'DELETE FROM sales WHERE id = ?', [id],
+  );
+};
+
+const updateSale = async ({ productId, quantity }, salesId) => {
+  await conn.execute(
+    'UPDATE sales_products SET quantity = ? WHERE product_id = ? AND sale_id =? ',
+    [quantity, productId, salesId],
+  );
+};
+
 module.exports = {
   getAllSales,
   getSaleById,
+  updateSale,
+  deleteSale,
 };
