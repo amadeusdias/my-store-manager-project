@@ -27,13 +27,20 @@ FROM StoreManager.sales AS venda
   return sale;
 };
 
+const getId = async (id) => {
+  const [sale] = await conn.execute(
+    'SELECT product_id AS productId, quantity FROM sales_products WHERE sale_id = ?', [id],
+  );
+  return sale;
+};
+
 const deleteSale = async (id) => {
   await conn.execute(
     'DELETE FROM sales WHERE id = ?', [id],
   );
 };
 
-const updateSale = async ({ productId, quantity }, salesId) => {
+const updateSale = async ({ quantity, productId }, salesId) => {
   await conn.execute(
     'UPDATE sales_products SET quantity = ? WHERE product_id = ? AND sale_id =? ',
     [quantity, productId, salesId],
@@ -45,4 +52,5 @@ module.exports = {
   getSaleById,
   updateSale,
   deleteSale,
+  getId,
 };

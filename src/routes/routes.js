@@ -14,6 +14,6 @@ router.get('/sales/:id', salesController.getSaleById);
 router.put('/products/:id', productMiddlewares.validateName, productsController.updateProduct);
 router.delete('/products/:id', productsController.deleteProduct);
 router.delete('/sales/:id', salesController.deleteSale);
-router.put('/sales/:id', salesMiddlewares.validadeBody, salesController.updateSale);
+router.put('/sales/:id', salesMiddlewares.validate, salesController.updateSale);
 
 module.exports = router;

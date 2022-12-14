@@ -21,10 +21,10 @@ const deleteSale = async (req, res) => {
 
 const updateSale = async (req, res) => {
   const { id } = req.params;
-  const { sale } = req.body;
+  const sale = req.body;
   const update = await salesServices.updateSale(sale, id);
   console.log(update);
-  if (sale.message) return res.status(sale.status).json({ message: sale.message });
+  if (update.message) return res.status(update.status).json({ message: update.message });
   return res.status(200).json(update);
 };
 
