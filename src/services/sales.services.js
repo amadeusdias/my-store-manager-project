@@ -14,7 +14,7 @@ const getSaleById = async (id) => {
 
 const deleteSale = async (id) => {
   const findId = await salesModels.getSaleById(id);
-  if (!findId) return { status: 404, message: 'Sale not found' };
+  if (!findId.length) return { status: 404, message: 'Sale not found' };
   const deleteP = await salesModels.deleteSale(id);
   return deleteP;
 };
@@ -39,30 +39,6 @@ const updateSale = async (sales, salesId) => {
     itemsUpdated: result,
   };
 };
-
-// const updateSale = async (sales, salesId) => {
-//   const { quantity, productId } = sales;
-//   const findId = await salesModels.getSaleById(salesId); 
-//   if (!findId.length) return { status: 404, message: 'Sale not found' };
-//   // const salesCheck = sales.map(async (sale) => {
-//   //   const checkId = await productModel.getProductsById(sale.productId);
-//   //   return checkId;
-//   // });
-//   const idProductCheck = await productModel.getProductsById(productId);
-//   const salesProduct = await Promise.all(idProductCheck);
-//   if (salesProduct.some((i) => !i)) return { status: 404, message: 'Product not found' };
-//   // const updateS = sales.map(async (s) => {
-//   //   const check = await salesModels.updateSale(s, salesId);
-//   //   return check;
-//   // });
-//   const updateS = await salesModels.updadeSale({ quantity, productId }, salesId);
-//   await Promise.all(updateS);
-//   const result = await salesModels.getSaleById(salesId);
-//   return { id: salesId,
-//     itemsUpdated: [result,
-//     ],
-//   };
-// };
 
 module.exports = {
   getAllSales,

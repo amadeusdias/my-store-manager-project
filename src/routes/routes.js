@@ -6,6 +6,7 @@ const salesMiddlewares = require('../middlewares/sales.middlewares');
 
 const router = express.Router();
 
+router.get('/products/search', productsController.searchProduct);
 router.get('/products', productsController.getAllProducts);
 router.get('/products/:id', productsController.getProductById);
 router.post('/products', productMiddlewares.validateName, productsController.createNewProduct);
