@@ -24,11 +24,8 @@ FROM StoreManager.sales AS venda
   //  'SELECT product_id, quantity FROM sales_products WHERE sale_id = ?',
     [id],
   );
-  console.log(getSaleById);
   return sale;
 };
-
-getSaleById(1);
 
 const getId = async (id) => {
   const [sale] = await conn.execute(
