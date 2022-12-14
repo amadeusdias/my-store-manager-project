@@ -13,6 +13,11 @@ const productsMock = [
   }
 ];
 
+const productMock = {
+    "id": 2,
+    "name": "Traje de encolhimento"
+  }
+
 const salesMock = [
   {
     "saleId": 1,
@@ -27,6 +32,13 @@ const salesMock = [
     "quantity": 2
   }
 ];
+
+const saleMock = {
+    "saleId": 1,
+    "date": "2021-09-09T04:54:29.000Z",
+    "productId": 1,
+    "quantity": 2
+  }
 
 const sales_productsMock = [
   {

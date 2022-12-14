@@ -10,7 +10,7 @@ const mock = require('../mocks');
 chai.use(sinonChai);
 
 
-describe('testa a camada controller', function () {
+describe('testa a camada controller de products', function () {
    afterEach(sinon.restore)
 
   it('retorna um array de produtos', async function () {
@@ -24,15 +24,19 @@ describe('testa a camada controller', function () {
     expect(res.status).to.have.been.calledWith(200);
     expect(res.json).to.have.been.calledWith(mock.productsMock);
   });
-  it('Quando o controller getProductsById é chamado', async function() {
-    const req = {params: { id: 1 }};
+
+   it('Valida se é possível listar apenas um produto pelo id', async function () {
+    const req = { params: { id: 3 } };
     const res = {};
-    res.status = sinon.stub().returnsThis(res);
+    res.status = sinon.stub().returns(res);
     res.json = sinon.stub().returns();
-    sinon.stub(productServices, 'getProductsById').resolves(mock.productsMock[0]);
-    await productControllers.getProductById(req, res);
-    expect(res.status).to.have.been.calledWith(200);
-    expect(res.json).to.have.been.calledWith(mock.productsMock[0]);
+
+    sinon.stub(productServices, 'getProductsById').resolves(mock.productsMock[2]);
+     await productControllers.getProductById(req, res);
+
+    sinon.assert.calledWith(res.status);
+    sinon.assert.calledWith(res.json);
+  });
 });
-});
+
 

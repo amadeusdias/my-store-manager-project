@@ -4,7 +4,7 @@ productModels = require('../../../src/models/products.models');
 const { expect } = require('chai');
 const mock = require('../mocks');
 
-describe('Testa a camada model', function() {
+describe('Testa a camada model de products', function() {
   afterEach(sinon.restore);
   it('se a função getAll retorna um array de produtos', async function () {
     sinon.stub(connection, 'execute').resolves([mock.productsMock]);
