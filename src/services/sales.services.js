@@ -40,9 +40,21 @@ const updateSale = async (sales, salesId) => {
   };
 };
 
+const insertSale = async (sales) => {
+  const verifyProducts = sales.map(async ({ productId }) => {
+    const result = await productModel.getProductsById(productId);
+    return result;
+  });
+  const checkProduct = await Promise.all(verifyProducts);
+  if (checkProduct.some((p) => !p)) return { status: 404, message: 'Product not found' };
+  const insert = await salesModels.insertSale(sales);
+  return insert;
+};
+
 module.exports = {
   getAllSales,
   getSaleById,
   updateSale,
-   deleteSale,
+  deleteSale,
+  insertSale,
 };

@@ -47,10 +47,35 @@ const updateSale = async ({ quantity, productId }, salesId) => {
   );
 };
 
+const addSale = async () => {
+  const [result] = await conn.execute(
+    'INSERT INTO sales (date) values (default)',
+  );
+  const { insertId } = result;
+  return insertId;
+};
+
+const insertSale = async (sales) => {
+  const saleId = await addSale();
+  const registerSales = sales.map(async ({ productId, quantity }) => {
+    const [result] = await conn.execute(
+      'INSERT INTO sales_products (sale_id, product_id, quantity) VALUES (?, ?, ?)',
+      [saleId, productId, quantity],
+    );
+    return result;
+  });
+  await Promise.all(registerSales);
+  return {
+    id: saleId,
+    itemsSold: sales,
+  };
+};
+
 module.exports = {
   getAllSales,
   getSaleById,
   updateSale,
   deleteSale,
   getId,
+  insertSale,
 };

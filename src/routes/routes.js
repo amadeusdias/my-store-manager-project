@@ -16,5 +16,6 @@ router.put('/products/:id', productMiddlewares.validateName, productsController.
 router.delete('/products/:id', productsController.deleteProduct);
 router.delete('/sales/:id', salesController.deleteSale);
 router.put('/sales/:id', salesMiddlewares.validate, salesController.updateSale);
+router.post('/sales', salesMiddlewares.validate, salesController.insertSale);
 
 module.exports = router;
