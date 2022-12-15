@@ -1,6 +1,14 @@
 # Project Store Manager
 
 Esse projeto consiste na construção de uma API RESTful para o gerenciamento de vendas no formato dropshipping, em que é possível fazer operações CRUD. Além disso é utilizada a arquitetura em camadas MSC (Model, Services e Controller),com gestão de dados utilizando MySQL diretamente. 
+
+As tecnologias utilizadas:
+- NodeJs
+- Express
+- Sinon, Chai e Mocha para os testes de unidade
+- MySQL
+- Joi p/ validação 
+
 <!-- Olá, Tryber!
 Esse é apenas um arquivo inicial para o README do seu projeto.
 É essencial que você preencha esse documento por conta própria, ok?
