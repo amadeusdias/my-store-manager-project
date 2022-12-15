@@ -5,7 +5,7 @@ Esse projeto consiste na construção de uma API RESTful para o gerenciamento de
 As tecnologias utilizadas:
 - NodeJs
 - Express
-- Sinon, Chai e Mocha para os testes de unidade
+- Sinon, Chai e Mocha p/ testes de unidade
 - MySQL
 - Joi p/ validação 
 
