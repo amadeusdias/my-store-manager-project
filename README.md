@@ -1,4 +1,8 @@
-# :construction: README em construção ! :construction:
+# Project Store Manager
+
+Projeto realizado com função de exercitar os conhecimentos em NodeJs, Testes Unitários e arquitetura em camadas MSC (Model, Services e Controller).
+O projeto é um CRUD simples acessando um Banco de Daddos MySQL e utilizando Joi para fazer a validação. 
+
 <!-- Olá, Tryber!
 Esse é apenas um arquivo inicial para o README do seu projeto.
 É essencial que você preencha esse documento por conta própria, ok?
