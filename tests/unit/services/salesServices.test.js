@@ -12,6 +12,12 @@ describe('testando se a camada service de sales', function () {
     const sales = await salesServices.getAllSales();
     expect(sales).to.be.deep.equal(mock.salesMock);
   });
+
+  it('deleta uma venda', async function () {
+    sinon.stub(salesModels, 'deleteSale').resolves();
+    const sales = await salesServices.deleteSale(1);
+    expect(sales).to.be.equal(undefined);
+  } );
 }); 
 // });
 

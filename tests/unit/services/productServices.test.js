@@ -12,7 +12,7 @@ describe('testando se a camada service', function () {
     const products = await productServices.getAllProducts();
     expect(products).to.be.deep.equal(mock.productsMock);
   });
-
+   
   it('e se o array contém três produtos', async function () {
     sinon.stub(productModels, 'getAllProducts').resolves(mock.productsMock);
     const products = await productServices.getAllProducts();
@@ -41,10 +41,10 @@ describe('testando se a camada service', function () {
   });
   it('retorna um produto atualizado', async function () {
     sinon.stub(productModels, 'updateProduct').resolves( 4 );
-    const product = await productServices.updateProduct('teste', 4);
+    const product = await productServices.updateProduct('Escudo do Capitão América', 3);
     expect(product).to.be.deep.equal({
-        id: 4,
-        name: 'teste'
+        id: 3,
+        name: 'Escudo do Capitão América'
     });
   });
 

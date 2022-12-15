@@ -23,7 +23,6 @@ const updateSale = async (req, res) => {
   const { id } = req.params;
   const sale = req.body;
   const update = await salesServices.updateSale(sale, id);
-  console.log(update);
   if (update.message) return res.status(update.status).json({ message: update.message });
   return res.status(200).json(update);
 };

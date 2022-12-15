@@ -63,6 +63,19 @@ describe('testa a camada controller de products', function () {
     sinon.assert.calledWith(res.status);
     sinon.assert.calledWith(res.json);
   });
+
+  // it('Valida se é possível deletar um produto', async function () {
+  //   const req = { params: { id: 4 } };
+  //   const res = {};
+  //   res.status = sinon.stub().returns(res);
+  //   res.json = sinon.stub().returns();
+
+  //   sinon.stub(productServices, 'deleteProduct').resolves();
+  //   await productControllers.deleteProduct(req, res);
+
+  //   expect(res.status).to.have.been.calledWith(204);
+  //   expect(res.end());
+  // } );
 });
 
 

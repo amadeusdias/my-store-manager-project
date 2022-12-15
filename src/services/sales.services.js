@@ -34,7 +34,6 @@ const updateSale = async (sales, salesId) => {
   });
   await Promise.all(updateS);
   const result = await salesModels.getId(salesId);
-  console.log(result);
   return { saleId: salesId,
     itemsUpdated: result,
   };

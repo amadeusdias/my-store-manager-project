@@ -38,34 +38,70 @@ const salesMock = [
   }
 ];
 
-const saleMock = {
-    "saleId": 3,
-    "date": "2021-09-09T04:54:29.000Z",
-    "productId": 1,
-    "quantity": 2
-}
+insertSalesMock = [
+    {
+      "productId": 1,
+      "quantity": 1
+    },
+    {
+      "productId": 2,
+      "quantity": 5
+    }
+  ]
 
-const sales_productsMock = [
+
+const insertStatusData = [
   {
-    "sale_id": 1,
-    "product_id": 1,
-    "quantity": 5,
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 1,
+    "info": "",
+    "serverStatus": 2,
+    "warningStatus": 0
   },
-  {
-    "sale_id": 1,
-    "product_id": 2,
-    "quantity": 10,
-  },
-  {
-    "sale_id": 2,
-    "product_id": 3,
-    "quantity": 15,
-  }
+  null
 ];
+
+const resultModelSales = {
+  id: 1,
+  itemsSold: [{
+    productId: 1,
+    quantity: 1
+  },
+  {
+    productId: 2,
+    quantity: 5,
+    }]
+}
+  
+const salesProducts = [
+  {
+    sale_id: 1,
+    product_id: 1,
+    quantity: 5,
+  },
+  {
+    sale_id: 1,
+    product_id: 2,
+    quantity: 10,
+  },
+  {
+    sale_id: 2,
+    product_id: 3,
+    quantity: 15,
+  },
+  {
+    sale_id: 3,
+    product_id: 1,
+    quantity: 1,
+  }
+]
 
 module.exports = {
   productsMock,
   salesMock,
-  sales_productsMock,
   newProductMock,
+  insertStatusData,
+  resultModelSales,
+  salesProducts,
 };
