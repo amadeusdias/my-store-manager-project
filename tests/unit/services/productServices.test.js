@@ -27,4 +27,31 @@ describe('testando se a camada service', function () {
       item: mock.productsMock[0],
     });
   });
+
+  it('retorna um novo product', async function () { 
+    sinon.stub(productModels, 'createProduct').resolves( 4 );
+    const product = await productServices.createProduct('teste');
+    expect(product).to.be.deep.equal({
+      type: 201,
+      data: {
+        id: 4,
+        name: 'teste'
+      },
+    });
+  });
+  it('retorna um produto atualizado', async function () {
+    sinon.stub(productModels, 'updateProduct').resolves( 4 );
+    const product = await productServices.updateProduct('teste', 4);
+    expect(product).to.be.deep.equal({
+        id: 4,
+        name: 'teste'
+    });
+  });
+
+  it('deleta um produto', async function () {
+    sinon.stub(productModels, 'deleteProduct').resolves();
+    const product = await productServices.deleteProduct(1);
+    expect(product).to.be.equal(undefined);
+  });
+
 });

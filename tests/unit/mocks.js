@@ -14,9 +14,14 @@ const productsMock = [
 ];
 
 const productMock = {
-    "id": 2,
-    "name": "Traje de encolhimento"
-  }
+    "id": 4,
+    "name": "Capa do DR.Estranho"
+}
+  
+const newProductMock = {
+  "id": 4,
+  "name": "teste"
+}
 
 const salesMock = [
   {
@@ -34,11 +39,11 @@ const salesMock = [
 ];
 
 const saleMock = {
-    "saleId": 1,
+    "saleId": 3,
     "date": "2021-09-09T04:54:29.000Z",
     "productId": 1,
     "quantity": 2
-  }
+}
 
 const sales_productsMock = [
   {
@@ -62,4 +67,5 @@ module.exports = {
   productsMock,
   salesMock,
   sales_productsMock,
+  newProductMock,
 };

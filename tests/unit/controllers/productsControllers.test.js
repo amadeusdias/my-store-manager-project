@@ -36,6 +36,32 @@ describe('testa a camada controller de products', function () {
 
     sinon.assert.calledWith(res.status);
     sinon.assert.calledWith(res.json);
+   });
+  
+  it('Valida se é possível criar um novo produto', async function () {
+    const req = { body: { name: 'teste' } };
+    const res = {};
+    res.status = sinon.stub().returns(res);
+    res.json = sinon.stub().returns();
+
+    sinon.stub(productServices, 'createProduct').resolves(4);
+    await productControllers.createNewProduct(req, res);
+
+    sinon.assert.calledWith(res.status);
+    sinon.assert.calledWith(res.json);
+  });
+
+  it('Valida se é possível atualizar um produto', async function () {
+    const req = { body: { name: 'teste' }, params: { id: 4 } };
+    const res = {};
+    res.status = sinon.stub().returns(res);
+    res.json = sinon.stub().returns();
+
+    sinon.stub(productServices, 'updateProduct').resolves(4);
+    await productControllers.updateProduct(req, res);
+
+    sinon.assert.calledWith(res.status);
+    sinon.assert.calledWith(res.json);
   });
 });
 
