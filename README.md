@@ -1,8 +1,6 @@
 # Project Store Manager
 
-Projeto realizado com função de exercitar os conhecimentos em NodeJs, Testes Unitários e arquitetura em camadas MSC (Model, Services e Controller).
-O projeto é um CRUD simples acessando um Banco de Dados MySQL e utilizando Joi para fazer a validação. 
-
+Esse projeto consiste na construção de uma API RESTful para o gerenciamento de vendas no formato dropshipping, em que é possível fazer operações CRUD. Além disso é utilizada a arquitetura em camadas MSC (Model, Services e Controller),com gestão de dados utilizando MySQL diretamente. 
 <!-- Olá, Tryber!
 Esse é apenas um arquivo inicial para o README do seu projeto.
 É essencial que você preencha esse documento por conta própria, ok?
