@@ -54,4 +54,10 @@ describe('testando se a camada service', function () {
     expect(product).to.be.equal(undefined);
   });
 
+  // it('retorna se a busca não encontrou nenhum produto', async function () {
+  //   sinon.stub(productModels, 'getAllProducts').resolves();
+  //   const product = await productServices.searchProduct('jdncssd');
+  //   expect(product).to.be.undefined();
+  // });
+
 });

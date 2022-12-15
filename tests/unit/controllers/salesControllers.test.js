@@ -33,6 +33,17 @@ describe('testa a camada controller de sales', function () {
     sinon.assert.calledWith(res.status);
     sinon.assert.calledWith(res.json);
   })
+
+  it('deleta uma venda especifica', async function () {
+    const req = {params: { id: 1 }};
+    const res = {};
+    res.status = sinon.stub().returnsThis(res);
+    res.json = sinon.stub().returns();
+    sinon.stub(salesServices, 'deleteSale').resolves(1);
+    await salesControllers.deleteSale(req, res)
+    sinon.assert.calledWith(res.status);
+    sinon.assert.calledWith(res.json);
+   });
   
 });
 

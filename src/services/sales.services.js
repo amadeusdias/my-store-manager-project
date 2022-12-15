@@ -9,7 +9,7 @@ const getAllSales = async () => {
 const getSaleById = async (id) => {
   const sale = await salesModels.getSaleById(id);
   if (!sale.length) return { status: 404, message: 'Sale not found' };
-  return { status: 200, data: sale }; // sale é um objeto
+  return { status: 200, data: sale }; 
 };
 
 const deleteSale = async (id) => {

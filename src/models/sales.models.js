@@ -21,7 +21,6 @@ FROM StoreManager.sales AS venda
     INNER JOIN 
     StoreManager.sales_products AS produto ON produto.sale_id = venda.id
     WHERE sale_id = ?;`,
-  //  'SELECT product_id, quantity FROM sales_products WHERE sale_id = ?',
     [id],
   );
   return sale;

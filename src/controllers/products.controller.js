@@ -31,7 +31,7 @@ const deleteProduct = async (req, res) => {
   const { id } = req.params;
   const deleteP = await productsServices.deleteProduct(id);
   if (deleteP) return res.status(deleteP.status).json({ message: deleteP.message });
-  res.status(204).end();
+  res.status(204).json({ message: 'Product deleted' });
 };
 
 const searchProduct = async (req, res) => {

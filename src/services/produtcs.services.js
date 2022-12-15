@@ -39,7 +39,6 @@ const searchProduct = async (query) => {
   const filter = products.filter((p) => p.name.toLowerCase().includes(query.toLowerCase()));
   return filter;
 };
-
 module.exports = {
   getAllProducts,
   getProductsById,

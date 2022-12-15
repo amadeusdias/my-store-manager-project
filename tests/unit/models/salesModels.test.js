@@ -25,13 +25,6 @@ describe('testa a camada Model de sales', function () {
     expect(sale).to.be.deep.equal(mock.salesProducts[3]);
   })
 
-  // it('se a venda é criada ao chamar o insertSale', async function () {
-  //   sinon.stub(connection, 'execute').resolves([insertStatusData]);
-  //   const sale = await salesModel.insertSale({product_id: 1, quantity: 1});
-  //   expect(sale).to.be.deep.equal(insertStatusData);
-  // }
-  // );
-
   it('se a venda é deletada ao chamar o  deleteSale', async function() {
     sinon.stub(connection, 'execute').resolves();
     const sale = await salesModel.deleteSale(1);

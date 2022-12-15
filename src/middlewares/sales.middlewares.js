@@ -22,18 +22,4 @@ const validate = (req, res, next) => {
   next();
 };
 
-// const validadeBody = (req, res, next) => {
-//   const { productId, quantity } = req.body;
-//   if (productId === undefined) {
-//     return res.status(404).json({ message: '"productId" is required' });
-//   }
-//   if (quantity === undefined) {
-//     return res.status(404).json({ message: '"quantity" is required' });
-//   }
-//   if (quantity <= 0) {
-//     return res.status(422).json({ message: '"quantity" must be grater than or equal to zero' });
-//   }
-//   next();
-// };
-
 module.exports = { validate };
